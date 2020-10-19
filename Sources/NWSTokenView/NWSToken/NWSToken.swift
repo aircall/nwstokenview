@@ -20,6 +20,15 @@ open class NWSToken: UIView
     required public init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    private func commonInit() {
         // Hide text view (for using keyboard to delete token)
         hiddenTextView.isHidden = true
         hiddenTextView.text = "NWSTokenDeleteKey" // Set default text for detection in delegate
