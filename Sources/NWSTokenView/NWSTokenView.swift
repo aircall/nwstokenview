@@ -68,18 +68,17 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     var textViewMinimumWidth: CGFloat = 30.0
     var textViewMinimumHeight: CGFloat = 30.0
     
-    open override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        // Update scroll view content size
-        let contentSize = self.scrollView.contentSize
-        self.scrollView.contentSize = CGSize(width: self.scrollView.bounds.width, height: contentSize.height)
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
     }
     
-    override open func awakeFromNib()
-    {
-        super.awakeFromNib()
-
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+    
+    private func commonInit() {
         // Set default scroll properties
         self.scrollView.backgroundColor = UIColor.clear
         self.scrollView.isScrollEnabled = true
@@ -110,6 +109,14 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
 
         // Orientation Rotation Listener
         NotificationCenter.default.addObserver(self, selector: #selector(NWSTokenView.didRotateInterfaceOrientation), name: UIDevice.orientationDidChangeNotification, object: nil)
+    }
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        // Update scroll view content size
+        let contentSize = self.scrollView.contentSize
+        self.scrollView.contentSize = CGSize(width: self.scrollView.bounds.width, height: contentSize.height)
     }
     
     /// Reloads data when interface orientation is changed.
