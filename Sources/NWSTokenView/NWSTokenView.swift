@@ -189,7 +189,6 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         // Scroll to bottom if added new token, otherwise stay in current position
         if self.tokens.count > self.lastTokenCount
         {
-            self.shouldBecomeFirstResponder = true
             self.scrollToBottom(animated: false)
         }
         self.lastTokenCount = self.tokens.count
