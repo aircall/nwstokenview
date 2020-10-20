@@ -212,6 +212,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         
         // Notify delegate of content size change
         self.delegate?.tokenView(self, contentSizeChanged: self.scrollView.contentSize)
+        invalidateIntrinsicContentSize()
         
         // Notify delegate of finished loading
         self.delegate?.tokenView(self, didFinishLoadingTokens: self.tokens.count)
@@ -422,6 +423,10 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         
         // Notify delegate
         self.delegate?.tokenView(self)
+    }
+    
+    open override var intrinsicContentSize: CGSize {
+        CGSize(width: UIView.noIntrinsicMetric, height: scrollView.contentSize.height)
     }
     
     open func textViewDidEndEditing(_ textView: UITextView)
