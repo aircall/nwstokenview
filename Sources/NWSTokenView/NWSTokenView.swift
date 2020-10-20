@@ -80,6 +80,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     
     private func commonInit() {
         // Set default scroll properties
+        self.scrollView.frame = bounds
         self.scrollView.backgroundColor = UIColor.clear
         self.scrollView.isScrollEnabled = true
         self.scrollView.isUserInteractionEnabled = true
