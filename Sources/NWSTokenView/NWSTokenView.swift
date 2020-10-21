@@ -304,7 +304,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     {
         self.textView.font = self.dataSource?.fontForTokenViewTextView(self) ?? UIFont.systemFont(ofSize: 14.0)
         // Set placeholder text (ignore if tokens exist, text exists, or is currently active field)
-        if self.tokens.count == 0 && self.lastText == "" && !self.shouldBecomeFirstResponder
+        if self.tokens.count == 0 && self.lastText == "" && !self.shouldBecomeFirstResponder && !textView.isFirstResponder
         {
             if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
             {
