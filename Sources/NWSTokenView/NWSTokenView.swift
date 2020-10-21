@@ -27,6 +27,36 @@ public protocol NWSTokenDataSource
     func tokenView(_ tokenView: NWSTokenView, viewForTokenAtIndex index: Int) -> UIView?
 }
 
+public extension NWSTokenDataSource {
+    func insetsForTokenView(_ tokenView: NWSTokenView) -> UIEdgeInsets? {
+        nil
+    }
+    func titleForTokenViewLabel(_ tokenView: NWSTokenView) -> String? {
+        nil
+    }
+    func fontForTokenViewLabel(_ tokenview: NWSTokenView) -> UIFont? {
+        nil
+    }
+    func textColorForTokenViewLabel(_ tokenview: NWSTokenView) -> UIColor? {
+        nil
+    }
+    func titleForTokenViewPlaceholder(_ tokenView: NWSTokenView) -> String? {
+        nil
+    }
+    func fontForTokenViewTextView(_ tokenview: NWSTokenView) -> UIFont? {
+        nil
+    }
+    func textColorForTokenViewPlaceholder(_ tokenview: NWSTokenView) -> UIColor? {
+        nil
+    }
+    func textColorForTokenViewTextView(_ tokenview: NWSTokenView) -> UIColor? {
+        nil
+    }
+    func tokenView(_ tokenView: NWSTokenView, viewForTokenAtIndex index: Int) -> UIView? {
+        nil
+    }
+}
+
 // MARK: NWSTokenDelegate Protocols
 public protocol NWSTokenDelegate
 {
@@ -39,6 +69,18 @@ public protocol NWSTokenDelegate
     func tokenView(_ tokenView: NWSTokenView, didEnterText text: String)
     func tokenView(_ tokenView: NWSTokenView, contentSizeChanged size: CGSize)
     func tokenView(_ tokenView: NWSTokenView, didFinishLoadingTokens tokenCount: Int)
+}
+
+public extension NWSTokenDelegate {
+    func tokenView(_ tokenView: NWSTokenView, didSelectTokenAtIndex index: Int) {}
+    func tokenView(_ tokenView: NWSTokenView, didDeselectTokenAtIndex index: Int) {}
+    func tokenView(_ tokenView: NWSTokenView, didDeleteTokenAtIndex index: Int) {}
+    func tokenView(_ tokenViewDidBeginEditing: NWSTokenView) {}
+    func tokenViewDidEndEditing(_ tokenView: NWSTokenView) {}
+    func tokenView(_ tokenView: NWSTokenView, didChangeText text: String) {}
+    func tokenView(_ tokenView: NWSTokenView, didEnterText text: String) {}
+    func tokenView(_ tokenView: NWSTokenView, contentSizeChanged size: CGSize) {}
+    func tokenView(_ tokenView: NWSTokenView, didFinishLoadingTokens tokenCount: Int) {}
 }
 
 // MARK: NWSTokenView Class
