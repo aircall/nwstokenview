@@ -103,6 +103,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     var tokenViewInsets: UIEdgeInsets = UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5) // Default
     var tokenHeight: CGFloat = 20
     var didReloadFromRotation = false
+    var maxHeight: CGFloat = 300
     
     // MARK: Constants
     var labelMinimumHeight: CGFloat = 20.0
@@ -471,7 +472,10 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     }
     
     open override var intrinsicContentSize: CGSize {
-        CGSize(width: UIView.noIntrinsicMetric, height: scrollView.contentSize.height)
+        CGSize(
+            width: UIView.noIntrinsicMetric,
+            height: min(scrollView.contentSize.height, maxHeight)
+        )
     }
     
     open func textViewDidEndEditing(_ textView: UITextView)
