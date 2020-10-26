@@ -101,15 +101,15 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     var tokens: [NWSToken] = []
     var selectedToken: NWSToken?
     var tokenViewInsets: UIEdgeInsets = UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5) // Default
-    var tokenHeight: CGFloat = 20
+    var tokenHeight: CGFloat = 30
     var didReloadFromRotation = false
     var maxHeight: CGFloat = 300
     
     // MARK: Constants
-    var labelMinimumHeight: CGFloat = 20.0
-    var labelMinimumWidth: CGFloat = 20.0
-    var textViewMinimumWidth: CGFloat = 20.0
-    var textViewMinimumHeight: CGFloat = 20.0
+    var labelMinimumHeight: CGFloat = 30
+    var labelMinimumWidth: CGFloat = 30
+    var textViewMinimumWidth: CGFloat = 30
+    var textViewMinimumHeight: CGFloat = 30
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
