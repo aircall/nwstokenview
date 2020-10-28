@@ -88,6 +88,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
 {
     open var dataSource: NWSTokenDataSource? = nil
     open var delegate: NWSTokenDelegate? = nil
+    open var maxHeight: CGFloat = 300
     
     // MARK: Private Vars
     fileprivate var shouldBecomeFirstResponder: Bool = false
@@ -103,8 +104,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     var tokenViewInsets: UIEdgeInsets = UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5) // Default
     var tokenHeight: CGFloat = 30
     var didReloadFromRotation = false
-    var maxHeight: CGFloat = 300
-    
+
     // MARK: Constants
     var labelMinimumHeight: CGFloat = 30
     var labelMinimumWidth: CGFloat = 30
